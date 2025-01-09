@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Area Screenshot",
+    "version": "1.0",
+    "description": "Take an area screenshot on any webpage using your cursor.",
+    "permissions": ["activeTab", "scripting", "downloads", "storage"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+      "service_worker": "background.js",
+      "type": "module"
+    },
+    "action": {
+      "default_title": "Take Screenshot",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "css": ["styles.css"]
+      }
+    ]
+  }
+  
